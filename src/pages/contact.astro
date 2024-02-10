@@ -4,40 +4,53 @@ import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
 import Layout from "@layouts/Layout.astro";
 import { Icon } from "astro-icon";
+import { Picture } from "astro:assets";
+import avivImageIcon from "assets/hero_contact.png";
 ---
 
 <Layout title="Contact">
   <Container>
     <Sectionhead>
-      <Fragment slot="title">Contact</Fragment>
-      <Fragment slot="desc">We are a here to help.</Fragment>
+      <Fragment slot="title">Contáctenos</Fragment>
+      <Fragment slot="desc">
+        <div class="max-w-4xl mx-auto">
+          Estamos aquí para ayudarte. ¡No dudes en ponerte en contacto con
+          nosotros! Ya sea para consultas, comentarios o asistencia, estamos a
+          tu disposición para brindarte la mejor atención.
+        </div>
+      </Fragment>
     </Sectionhead>
 
     <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-16">
       <div>
-        <h2 class="font-medium text-2xl text-gray-800">Contact Astroship</h2>
+        <h2 class="font-medium text-2xl text-gray-800">Contacta Aviv</h2>
         <p class="text-lg leading-relaxed text-slate-500 mt-3">
-          Have something to say? We are here to help. Fill up the form or send
-          email or call phone.
+          Para cualquier pregunta o interés en nuestros servicios, contáctanos
+          por correo electrónico, WhatsApp o teléfono. Estamos aquí para
+          ayudarte.
         </p>
         <div class="mt-5">
           <div class="flex items-center mt-2 space-x-2 text-gray-600">
-            <Icon class="text-gray-400 w-4 h-4" name="uil:map-marker" />
-            <span>1734 Sanfransico, CA 93063</span>
-          </div><div class="flex items-center mt-2 space-x-2 text-gray-600">
             <Icon class="text-gray-400 w-4 h-4" name="uil:envelope" /><a
-              href="mailto:hello@astroshipstarter.com"
-              >hello@astroshipstarter.com</a
+              href="mailto:info@connectics.co">info@connectics.co</a
             >
           </div><div class="flex items-center mt-2 space-x-2 text-gray-600">
             <Icon class="text-gray-400 w-4 h-4" name="uil:phone" /><a
-              href="tel:+1 (987) 4587 899">+1 (987) 4587 899</a
+              target="_blank"
+              href="https://api.whatsapp.com/send?phone=+573224338072&text=%C2%A1Hola!%20Estoy%20interesado%20en%20obtener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20servicios%20de%20Aviv%20.%20%C2%BFPodr%C3%ADan%20proporcionarme%20detalles%20adicionales?%20%F0%9F%A5%B3"
+              >+57 3224338072</a
             >
           </div>
         </div>
       </div>
       <div>
-        <Contactform />
+        <Picture
+          src={avivImageIcon}
+          alt="Astronaut in the air"
+          width="100%"
+          loading="eager"
+          format="avif"
+        />
       </div>
     </div>
   </Container>

@@ -1,10 +1,60 @@
 ---
 import { Tick } from "@components/ui/icons";
 import Link from "@components/ui/link.astro";
+import SmallDataText from "@components/ui/smalldatatext.astro";
 
-const { plan } = Astro.props;
+const { data } = Astro.props;
 ---
 
+<div
+  class={"flex flex-col w-full order-first lg:order-none border-2 border-[#D8DEE9] border-opacity-50 py-5 px-6 rounded-md"}>
+  <div>
+    <h3 class="text-4xl font-bold text-black md:text-4xl text-center">
+      {data.title}
+    </h3>
+    <p class="text-center text-sm my-2 text-zinc-600">
+      {data.description}
+    </p>
+    <div class="mt-4 text-center text-zinc-600">
+      <span class="text-1xs text-zinc-400 line-through mb-1">
+        {data.discount && <>{data.typePricing + data.discount}</>}
+      </span>
+      <br />
+      <SmallDataText data={data.typePricing} />
+      <span class="text-4xl font-bold text-black">{data.pricing}</span>
+      {data?.longTime && <SmallDataText data={"/ " + data.longTime} />}
+    </div>
+
+    <div class="flex mt-8">
+      <Link
+        href="/contact"
+        block
+        class={data?.span ? "bg-secondary" : "bg-primary"}>
+        {"Solicitar cotización"}
+      </Link>
+    </div>
+    <p class="text-center text-sm my-2 text-zinc-600">
+      {data.caption}
+    </p>
+    {
+      data.modules.map((module: any, i: number) => (
+        <div class="mt-4">
+          <strong>{module.title}</strong>
+          <ul class="mt-2 space-y-2">
+            {module.services.map((service: any, j: number) => (
+              <li class="flex items-start gap-3 text-gray-800">
+                <Tick class="w-6 h-6" />
+                <span>{service}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+  </div>
+</div>
+
+<!--
 <div>
   <div
     class="flex flex-col w-full order-first lg:order-none border-2 border-[#D8DEE9] border-opacity-50 py-5 px-6 rounded-md">
@@ -17,13 +67,6 @@ const { plan } = Astro.props;
             : plan.price
         }
       </p>
-      <!-- {
-        plan.price.original && (
-          <p class="mt-1 text-xl font-medium text-gray-400 line-through md:text-2xl">
-            {plan.price.original}
-          </p>
-        )
-      } -->
     </div><ul class="grid mt-8 text-left gap-y-4">
       {
         plan.features.map((item) => (
@@ -43,3 +86,4 @@ const { plan } = Astro.props;
     </div>
   </div>
 </div>
+-->

@@ -4,77 +4,121 @@ import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
 import PricingCard from "@components/pricing.astro";
 
-const pricing = [
+const PricingData = [
   {
-    name: "Personal",
-    price: "Free",
-    popular: false,
-    features: [
-      "Lifetime free",
-      "Up to 3 users",
-      "Unlimited Pages",
-      "Astro Sub domain",
-      "Basic Integrations",
-      "Community Support",
+    title: "Básico",
+    description:
+      "Con el Plan Básico, tendrás acceso a las herramientas esenciales para administrar eficazmente tus propiedades.",
+    pricing: "49.900",
+    typePricing: "CO $",
+    longTime: "Mes",
+    button: "Solicitar cotización",
+    caption: "CO $598.000 / 12 meses",
+    modules: [
+      {
+        title: "Gestión",
+        services: [
+          "Unidades/Copropiedades",
+          "Vigilantes",
+          "Propietarios",
+          "Arrendatarios",
+        ],
+      },
+      {
+        title: "Comunicaciones Residenciales",
+        services: ["Anuncios", "Correspondencia"],
+      },
+      {
+        title: "Control de Acceso y Logística",
+        services: ["Ingreso de visitantes", "Control de correspondencias"],
+      },
+      {
+        title: "Soporte técnico",
+        services: ["Soporte mediante tutoriales"],
+      },
     ],
-    button: {
-      text: "Get Started",
-      link: "/",
-    },
   },
   {
-    name: "Startup",
-    price: {
-      monthly: "$19",
-      annual: "$16",
-      discount: "10%",
-      original: "$24",
-    },
-    popular: true,
-    features: [
-      "All Free Features",
-      "Up to 20 users",
-      "20 Custom domains",
-      "Unlimited Collaborators",
-      "Advanced Integrations",
-      "Priority Support",
+    title: "Estándar",
+    description:
+      "La solución completa y confiable para tu negocio. Incluye todas las características esenciales y soporte técnico necesario.",
+    span: "POPULAR",
+    typePricing: "CO $",
+    pricing: "79.900",
+    discount: "99.900 / Mes",
+    percentageSavings: "AHORRA 25%",
+    longTime: "Mes",
+    button: "Solicitar cotización",
+    caption: "CO $20.000 Ahorro",
+    modules: [
+      {
+        title: "Gestión",
+        services: ["Todo el plan Básico", "Mascotas"],
+      },
+      {
+        title: "Comunicaciones Residenciales",
+        services: ["Todo el plan Básico", "Solicitudes y reclamos (PQRS)"],
+      },
+      {
+        title: "Control de Acceso y Logística",
+        services: ["Todo el plan Básico", "Control de mudanzas"],
+      },
+      {
+        title: "Reportes",
+        services: ["Demográficos"],
+      },
+      {
+        title: "Soporte técnico",
+        services: ["Todo el plan Básico", "Vía chat o correo electrónico"],
+      },
     ],
-    button: {
-      text: "Get Started",
-      link: "#",
-    },
   },
   {
-    name: "Enterprise",
-    price: "Custom",
-    popular: false,
-    features: [
-      "All Pro Features",
-      "Unlimited Custom domains",
-      "99.99% Uptime SLA",
-      "SAML & SSO Integration",
-      "Dedicated Account Manager",
-      "24/7 Phone Support",
+    title: "Empresarial",
+    description:
+      "Soluciones adaptadas a tus necesidades. Nos aseguramos de satisfacer tus necesidades específicas con un servicio hecho a medida.",
+    typePricing: "",
+    pricing: "Personalizado",
+    button: "Solicitar cotización",
+    caption: "CO $1.018.000 / 12 meses",
+    modules: [
+      {
+        title: "Gestión",
+        services: ["Todo el plan Estándar", "Vehículos"],
+      },
+      {
+        title: "Comunicaciones Residenciales",
+        services: ["Todo el plan Estándar", "Citofonía"],
+      },
+      {
+        title: "Control de Acceso y Logística",
+        services: ["Todo el plan Estándar", "Ingreso de vehículos", "Minuta"],
+      },
+      {
+        title: "Reportes",
+        services: ["Todo el plan Estándar"],
+      },
+      {
+        title: "Soporte técnico",
+        services: ["Todo el plan Estándar", "Acompañamiento continuo"],
+      },
     ],
-    button: {
-      text: "Contact us",
-      link: "/contact",
-    },
   },
 ];
 ---
 
-<Layout title="Pricing">
+<Layout title="Servicios y Precios">
   <Container>
     <Sectionhead>
-      <Fragment slot="title">Pricing</Fragment>
+      <Fragment slot="title">Servicios y Precios</Fragment>
       <Fragment slot="desc">
-        Simple & Predictable pricing. No Surprises.
+        Descubre nuestros planes exclusivos para una administración eficiente.
+        ¡Tu conjunto residencial en las mejores manos!
       </Fragment>
     </Sectionhead>
 
-    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-screen-lg mt-12">
-      {pricing.map((item) => <PricingCard plan={item} />)}
+    <div class="grid md:grid-cols-3 gap-5 mx-auto mt-12">
+      {PricingData.map((item) => <PricingCard data={item} />)}
     </div>
   </Container>
 </Layout>

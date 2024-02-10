@@ -1,0 +1,65 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon";
+
+const features = [
+  {
+    title: "Administración y Gestión",
+    description:
+      "Desde la gestión eficiente de copropiedades hasta el control de acceso de visitantes, incluyendo la administración de propietarios, arrendatarios, vehículos y mascotas, nuestra plataforma integral simplifica la convivencia y la administración.",
+    icon: "bx:bxs-chart",
+  },
+  {
+    title: "Comunicaciones Residenciales",
+    description:
+      "Potencia la comunicación en tu comunidad con la gestión integral de anuncios, correspondencia y solicitudes. Mantén una interacción fluida y organizada entre residentes y administración, asegurando una comunicación efectiva.",
+    icon: "bx:bxs-door-open",
+  },
+  {
+    title: "Control de Acceso y Logística",
+    description:
+      "Optimiza el control de acceso y la logística en tu comunidad con servicios de gestión de visitantes, correspondencia, vehículos y mudanzas. Mantén la seguridad y el flujo organizado en cada ingreso.",
+    icon: "bx:bxs-key",
+  },
+  {
+    title: "Reportes",
+    description:
+      "Obtén una visión detallada de la demografía de tu comunidad a través de nuestros informes especializados. Toma decisiones fundamentadas basadas en datos concretos para mejorar la calidad de vida en tu conjunto residencial.",
+    icon: "bx:bxs-file",
+  },
+  {
+    title: "Soporte Técnico",
+    description:
+      "Obtén asistencia inmediata a través de nuestro chat o correo electrónico, accede a tutoriales detallados para resolver tus dudas y cuenta con un acompañamiento continuo para garantizar una experiencia sin problemas. Estamos aquí para ayudarte en cada paso.",
+    icon: "bx:bxs-help-circle",
+  },
+  {
+    title: "Citofonía",
+    description:
+      "La citofonía es un sistema fundamental para la comunicación interna en edificios y residencias. Facilita el acceso controlado de visitantes y la comunicación entre residentes y visitantes desde la comodidad de sus hogares. Nuestra solución de citofonía garantiza una comunicación clara y segura, mejorando la experiencia de todos los involucrados.",
+    icon: "bx:bxs-phone",
+  },
+];
+---
+
+<div class="mt-24 md:mt-24">
+  <h2 class="text-3xl lg:text-5xl font-bold lg:tracking-tight">
+    Servicios Destacados
+  </h2>
+</div>
+
+<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-12 gap-16">
+  {
+    features.map((item) => (
+      <div class="flex gap-4 items-start">
+        <div class="mt-1 bg-primary rounded-full  p-2 w-8 h-8 shrink-0">
+          <Icon class="text-white" name={item.icon} />
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
+          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>
