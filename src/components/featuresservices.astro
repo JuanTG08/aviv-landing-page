@@ -1,7 +1,7 @@
 ---
 // @ts-ignore
 import { Icon } from "astro-icon";
-
+/*
 const features = [
   {
     title: "Administración y Gestión",
@@ -40,10 +40,92 @@ const features = [
     icon: "bx:bxs-phone",
   },
 ];
+*/
+
+const features = [
+  {
+    title: "Citofonía virtual",
+    description:
+      "Permite a los vigilantes hacer llamadas desde el aplicativo para comunicarse con los residentes mediante telefonía pública, sin que estos necesiten estar en línea. Simplifica el acceso controlado y la comunicación directa entre vigilantes y residentes.",
+    icon: "bx:bxs-phone",
+  },
+  {
+    title: "Gestión de visitantes",
+    description:
+      "Permite a los residentes autorizar el acceso de visitantes especificando sus datos en la aplicación. Los vigilantes reciben esta información y, al llegar el visitante, pueden verificar y permitir el ingreso rápidamente desde el aplicativo.",
+    icon: "bx:bxs-group",
+  },
+  {
+    title: "Gestión de correspondencia",
+    description:
+      "Gestiona la recepción de correspondencia. Los vigilantes pueden registrar y fotografiar la paquetería o correspondencia, notificar al residente vía email automáticamente y en la aplicación.",
+    icon: "bx:bxs-package",
+  },
+  {
+    title: "Minuta digital",
+    description:
+      "Permite a los vigilantes registrar eventos y actividades en tiempo real. El administrador puede revisar y consultar toda la información registrada para un seguimiento efectivo y una gestión más transparente de las incidencias y actividades diarias.",
+    icon: "bx:bxs-book-bookmark",
+  },
+  {
+    title: "Difución de anuncios",
+    description:
+      "Permite al administrador crear y segmentar anuncios para todo el conjunto o para residentes específicos. Los anuncios se notifican por email a los destinatarios correspondientes, asegurando que la información importante llegue de manera efectiva.",
+    icon: "bx:bxs-megaphone",
+  },
+  {
+    title: "Gestión de PQRS",
+    description:
+      "Permite a los residentes enviar solicitudes, quejas, reclamos y sugerencias (PQRS) para su revisión por parte de los administradores. Cada nueva PQRS se notifica por correo electrónico a los administradores para una pronta atención.",
+    icon: "bx:bxs-message-add",
+  },
+  {
+    title: "Encuestas virtuales",
+    description:
+      "Permite al administrador enviar encuestas a todos los residentes. Los residentes reciben las encuestas y pueden completarlas fácilmente desde la aplicación, facilitando la recolección de opiniones y feedback.",
+    icon: "bx:bxs-conversation",
+  },
+  {
+    title: "Reserva de zonas comunes",
+    description:
+      "Facilita la reserva de áreas y espacios comunes, como salones o canchas. Los residentes pueden hacer y gestionar reservas directamente desde la aplicación, asegurando un uso organizado y eficiente de las instalaciones.",
+    icon: "bx:bxs-comment-edit",
+  },
+  {
+    title: "Gestión de documentos",
+    description:
+      "Permite consultar y acceder fácilmente a toda la documentación relacionada con las propiedades. Centraliza la información importante para una rápida revisión y gestión.",
+    icon: "bx:bxs-file-doc",
+  },
+  {
+    title: "Mudanzas",
+    description:
+      "Facilita la gestión de mudanzas dentro del conjunto. Los residentes pueden notificar y solicitar permisos para mudanzas, agilizando el proceso y asegurando una coordinación eficiente.",
+    icon: "bx:bxs-compass",
+  },
+  {
+    title: "Mascotas",
+    description:
+      "Permite a los residentes registrar y gestionar la información de todas las mascotas en la propiedad, facilitando el control y seguimiento de las mismas.",
+    icon: "bx:bxs-dog",
+  },
+  {
+    title: "Vehículos",
+    description:
+      "Permite a los residentes registrar sus vehículos y gestionar el acceso de aquellos previamente autorizados. Mejora la seguridad al controlar y monitorizar los vehículos en el conjunto.",
+    icon: "bx:bxs-car",
+  },
+  {
+    title: "Reportes",
+    description:
+      "Permite a los administradores generar reportes detallados sobre diversos aspectos del conjunto, incluyendo datos demográficos y otras métricas clave, para una visión completa y analítica de la comunidad.",
+    icon: "bx:bxs-report",
+  },
+];
 ---
 
 <div class="mt-24 md:mt-24">
-  <h2 class="text-3xl lg:text-5xl font-bold lg:tracking-tight">
+  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight text-center">
     Servicios Destacados
   </h2>
 </div>
@@ -52,7 +134,7 @@ const features = [
   {
     features.map((item) => (
       <div class="flex gap-4 items-start">
-        <div class="mt-1 bg-primary rounded-full  p-2 w-8 h-8 shrink-0">
+        <div class="mt-1 bg-primary rounded-full  p-2 w-10 h-10 shrink-0">
           <Icon class="text-white" name={item.icon} />
         </div>
         <div>
